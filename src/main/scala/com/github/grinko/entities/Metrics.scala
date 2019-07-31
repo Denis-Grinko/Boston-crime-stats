@@ -1,6 +1,5 @@
 package com.github.grinko.entities
 
-
 import java.text.SimpleDateFormat
 import java.util.Date
 
