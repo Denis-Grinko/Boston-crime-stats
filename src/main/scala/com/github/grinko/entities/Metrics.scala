@@ -1,21 +1,23 @@
 package com.github.grinko.entities
 
-case class Metrics(INCIDENT_NUMBER: String,
-                   OFFENSE_CODE: String,
-                   OFFENSE_CODE_GROUP: String,
-                   OFFENSE_DESCRIPTION: String,
-                   DISTRICT: String,
-                   REPORTING_AREA: String,
-                   SHOOTING: String,
-                   OCCURRED_ON_DATE: String,
-                   YEAR: String,
-                   MONTH: String,
-                   DAY_OF_WEEK: String,
-                   HOUR: String,
-                   UCR_PART: String,
-                   STREET: String,
-                   Lat: String,
-                   Long: String,
-                   Location: String) {
+import java.util.Date
 
+case class Metrics(
+                    incidentNumber: String,
+                    offenseCode: Option[Int],
+                    offenseCodeGroup: String,
+                    offenseDescription: String,
+                    district: String,
+                    reportingArea: Option[Int],
+                    shooting: Boolean,
+                    occurredOnDate: Date,
+                    year: Int,
+                    month: Int,
+                    dayOfWeek: String,
+                    hour: Int,
+                    ucrPart: String,
+                    street: String,
+                    lat: Option[Double],
+                    long: Option[Double],
+                    location: String) {
 }
