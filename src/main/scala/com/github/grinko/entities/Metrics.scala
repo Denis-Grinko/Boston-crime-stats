@@ -1,5 +1,6 @@
 package com.github.grinko.entities
 
+
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -84,7 +85,4 @@ class Metrics(metricsRaw: MetricsRaw) {
       shooting.toString, occurredOnDate.toString, year.toString, month.toString, dayOfWeek, hour.toString, ucrPart,
       street, lat.toString, long.toString, location)
   }
-
-
-
 }
