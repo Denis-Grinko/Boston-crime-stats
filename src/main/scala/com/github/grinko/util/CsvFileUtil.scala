@@ -6,7 +6,7 @@ import com.github.tototoshi.csv.{CSVReader, CSVWriter}
 
 import scala.io.Source
 
-class CsvFIleUtil {
+class CsvFileUtil {
   val INCIDENT_NUMBER: Int = 0
   val OFFENSE_CODE: Int = 1
   val OFFENSE_CODE_GROUP: Int = 2
