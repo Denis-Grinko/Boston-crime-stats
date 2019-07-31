@@ -20,5 +20,4 @@ case class Metrics(
   lat: Option[Double],
   long: Option[Double],
   location: String) {
-
 }
