@@ -4,6 +4,7 @@ import com.github.grinko.entities.{Metrics, MetricsRaw}
 
 class MostCrimesStreet {
   def calc(metrics: List[Metrics]): String = {
-    metrics.groupBy(_.street).map(elem => (elem._1, elem._2.size)).toMap.maxBy(_._2)._1
+    metrics.groupBy(_.street).map{ case (street, crimesList) => (street, crimesList.size)}
+      .toMap.maxBy{ case (street, crimesNumber) => crimesNumber}._1
   }
 }
