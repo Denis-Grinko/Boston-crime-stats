@@ -4,6 +4,8 @@ import com.github.grinko.entities.Metrics
 
 class MostCrimesDistinctByYear {
   def calc(metrics: List[Metrics], year: Int): String = {
-    metrics.filter(_.year.equals(year)).groupBy(_.district).map(elem => (elem._1, elem._2.size)).toMap.maxBy(_._2)._1
+    metrics.filter(_.year.equals(year)).groupBy(_.district)
+      .map{ case (distinct, crimesList )=> (distinct, crimesList.size)}.toMap
+      .maxBy{ case (distinct, crimesNumber) => crimesNumber}._1
   }
 }
