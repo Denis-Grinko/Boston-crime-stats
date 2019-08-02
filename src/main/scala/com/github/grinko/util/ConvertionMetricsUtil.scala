@@ -8,7 +8,7 @@ import com.github.grinko.entities.{Metrics, MetricsRaw}
 import scala.util.Try
 
 class ConvertionMetricsUtil {
-  lazy val DATE_FORMAT = "yyyy-MM-dd hh:mm:ss"
+  lazy val DATE_FORMAT: String = "yyyy-MM-dd hh:mm:ss"
 
   def rawMetricsToMetrics(metrics: List[MetricsRaw]): List[Metrics] = {
      metrics.map(metric => new Metrics(
@@ -41,8 +41,8 @@ class ConvertionMetricsUtil {
   }
 
   def stringToDate(string: String, dateFormat: String): Date = {
-    val dateFormat = new SimpleDateFormat(dateFormat)
-    dateFormat.parse(string)
+    val simpleDateFormat = new SimpleDateFormat(dateFormat)
+    simpleDateFormat.parse(string)
   }
 
   def isShooting(string: String): Boolean = {
