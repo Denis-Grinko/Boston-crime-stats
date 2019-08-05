@@ -18,7 +18,7 @@ class ConvertionMetricsUtil {
        metric.offenseDescription,
        metric.district,
        stringToInt(metric.reportingArea),
-       isShooting(metric.shooting),
+       metric.shooting.isEmpty,
        stringToDate(metric.occurredOnDate, DATE_FORMAT),
        stringToInt(metric.year),
        stringToInt(metric.month),
@@ -45,12 +45,10 @@ class ConvertionMetricsUtil {
     simpleDateFormat.parse(string)
   }
 
-  def isShooting(string: String): Boolean = {
-    if(string.isEmpty){
-      false
-    } else {
-      true
-    }
+  def metricToList(metrics: Metrics): List[String] = {
+    List[String](metrics.incidentNumber, metrics.offenseCode.toString, metrics.offenseCodeGroup,
+      metrics.offenseDescription, metrics.district, metrics.reportingArea.toString,metrics.shooting.toString,
+      metrics.occurredOnDate.toString, metrics.year.toString, metrics.month.toString, metrics.dayOfWeek,
+      metrics.hour.toString, metrics.ucrPart, metrics.street, metrics.lat.toString, metrics.long.toString, metrics.location)
   }
-
 }

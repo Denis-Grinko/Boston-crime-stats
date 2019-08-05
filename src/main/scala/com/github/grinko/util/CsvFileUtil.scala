@@ -28,10 +28,23 @@ class CsvFileUtil {
   def read(fileName: String): List[MetricsRaw] = {
     val reader = CSVReader.open(fileName)
     val metrics = reader.all()
-    metrics.map(list => MetricsRaw(list(INCIDENT_NUMBER), list(OFFENSE_CODE), list(OFFENSE_CODE_GROUP),
-      list(OFFENSE_DESCRIPTION), list(DISTRICT), list(REPORTING_AREA), list(SHOOTING), list(OCCURRED_ON_DATE),
-      list(YEAR), list(MONTH), list(DAY_OF_WEEK), list(HOUR), list(UCR_PART), list(STREET), list(LAT), list(LONG),
-      list(LOCATION) )).toList
+    metrics.map(list => MetricsRaw(list(INCIDENT_NUMBER),
+                                    list(OFFENSE_CODE),
+                                    list(OFFENSE_CODE_GROUP),
+                                    list(OFFENSE_DESCRIPTION),
+                                    list(DISTRICT),
+                                    list(REPORTING_AREA),
+                                    list(SHOOTING),
+                                    list(OCCURRED_ON_DATE),
+                                    list(YEAR),
+                                    list(MONTH),
+                                    list(DAY_OF_WEEK),
+                                    list(HOUR),
+                                    list(UCR_PART),
+                                    list(STREET),
+                                    list(LAT),
+                                    list(LONG),
+                                    list(LOCATION) )).toList
   }
 
   def write(fileName: String, metrics: List[List[String]]): Unit ={

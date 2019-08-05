@@ -1,4 +1,4 @@
-package scala.com.github.grinko
+package com.github.grinko
 
 import com.github.grinko.entities.MetricsRaw
 

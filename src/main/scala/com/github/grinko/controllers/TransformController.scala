@@ -6,22 +6,22 @@ import com.github.grinko.service._
 class TransformController {
 
   def getMostCrimesDayTime(metrics: List[Metrics]): Option[Int] = {
-    new MostCrimesDayTime().apply(metrics)
+    new MostCrimesDayTime()(metrics)
   }
 
   def getMostCrimesStreet(metrics: List[Metrics]): String ={
-    new MostCrimesStreet().apply(metrics)
+    new MostCrimesStreet()(metrics)
   }
 
   def getMostCrimesDistinctByYear(metrics: List[Metrics], year: Int): String ={
-    new MostCrimesDistinctByYear().apply(metrics, year)
+    new MostCrimesDistinctByYear()(metrics, year)
   }
 
   def getNumberCrimesForAllYear(metrics: List[Metrics]): Map[Option[Int], Int] = {
-    new NumberCrimesForAllYear().apply(metrics)
+    new NumberCrimesForAllYear()(metrics)
   }
 
   def getNumberOfCrimesEachMounthInEachYear(metrics: List[Metrics]): Map[Option[Int], Map[Option[Int], Int]] = {
-    new NumberOfCrimesEachMounthInEachYear().apply(metrics)
+    new NumberOfCrimesEachMounthInEachYear()(metrics)
   }
 }
